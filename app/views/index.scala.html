@@ -1,0 +1,23 @@
+@()(implicit request: RequestHeader)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Stocks</title>
+</head>
+<body data-ws-url="@routes.HomeController.ws.webSocketURL()">
+  <form id="stock-form">
+    <input type="text" value="AAPL" id="stock_symbol"/>
+    <button type="submit" onclick="init()">Submit Stock</button>
+  </form>
+  <div id="msg_holder">
+      <script>
+          var output;
+          function init() {
+              output = document.getElementById("stock_symbol").value;
+              websocket = new WebSocket("@routes.HomeController.ws.webSocketURL()");
+          }
+  </script>
+</body>
+</html>
+</html>

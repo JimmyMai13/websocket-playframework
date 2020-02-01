@@ -1,0 +1,3 @@
+[0m[[0m[31merror[0m] [0m[0m[Error] /Users/jimmy/Documents/Code/scala_projects/clutch/play-feed/app/views/index.scala.html:21[0m
+[0m[[0m[31merror[0m] [0m[0m              console.log("@@@@@@@@@@@");: Expected ending '}'[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mtwirlCompileTemplates[0m) Twirl compilation failed[0m
