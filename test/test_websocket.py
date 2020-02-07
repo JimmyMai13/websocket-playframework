@@ -15,9 +15,9 @@ class TestWebsocket:
         self.sent_and_received_messages = {}
         if self.connection.open:
             for each in stock_symbol:
-                await self.sendMessage(each)
+                await self.send_message(each)
 
-                rec_msg = await self.receiveMessage(self.connection)
+                rec_msg = await self.receive_message(self.connection)
                 if "$" in rec_msg:
                     money_sym_index = rec_msg.find("$")
                     price = float(rec_msg[money_sym_index - len(rec_msg) + 1:])
@@ -28,11 +28,11 @@ class TestWebsocket:
             assert False, "Unable to establish connection with {}".format(self.ws_url)
         return self.connection
 
-    async def sendMessage(self, message):
+    async def send_message(self, message):
         print("Message sent to server: '{}'".format(message))
         await self.connection.send(message)
 
-    async def receiveMessage(self, connection):
+    async def receive_message(self, connection):
         message = None
         while not message:
             try:
